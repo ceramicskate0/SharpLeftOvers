@@ -15,7 +15,7 @@ SharpLeftOvers is a tool that is geared towards finding left over artifacts from
       Note: you can run them by adding them each to commandline or '-all' command.
 
       -all
-      Run all searchs/things (list seens below)
+      Run all searchs/things (list below)
 
       -roastedtickets
       Search file system for any files with .kirbi file extension. (default for tools)
