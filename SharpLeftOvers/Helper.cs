@@ -5,6 +5,7 @@ using System.DirectoryServices;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,7 +14,9 @@ namespace SharpLeftOvers
     class Helper
     {
         private static List<string> filesfound = new List<string>();
-
+        public static bool IsAdministrator =>
+           new WindowsPrincipal(WindowsIdentity.GetCurrent())
+               .IsInRole(WindowsBuiltInRole.Administrator);
         public static List<string> DirSearchExtension(string sDir, string extension)
         {
             try
@@ -94,13 +97,13 @@ namespace SharpLeftOvers
                     }
                     catch (System.Exception excpt)
                     {
-                        Console.WriteLine("[!] " + excpt.Message);
+                        //Console.WriteLine("[!] " + excpt.Message);
                     }
                 }
             }
             catch (System.Exception excpt)
             {
-                Console.WriteLine(excpt.Message);
+                //Console.WriteLine(excpt.Message);
             }
             return filesfound;
         }

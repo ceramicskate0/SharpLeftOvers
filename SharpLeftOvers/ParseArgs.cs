@@ -20,6 +20,10 @@ namespace SharpLeftOvers
             }
             else
             {
+                if (Helper.IsAdministrator==false)
+                {
+                    Console.WriteLine("[!] NOT Running as admin. Somethings wont work as good as they could.");
+                }
                 for (int x = 0; x < args.Length; ++x)
                 {
                     try
