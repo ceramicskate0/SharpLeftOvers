@@ -15,7 +15,7 @@ SharpLeftOvers is a tool that is geared towards finding left over artifacts from
       Note: you can run them by adding them each to commandline or '-all' command.
 
       -all
-      Run all searchs/things (list below)
+      Run all searchs/things (list seens below)
 
       -roastedtickets
       Search file system for any files with .kirbi file extension. (default for tools)
@@ -25,6 +25,15 @@ SharpLeftOvers is a tool that is geared towards finding left over artifacts from
 
       -skeletonkey
       Attempt to auth to krbtgt account with password 'mimikatz' to check for skeleton key.
+
+      -dmp
+      Attempt to find lsass dump files or other memory dump files with .dmp extension.
+
+      -keethief
+      Attempt to find left over keethief dumps.
+
+      -keefarce
+      Attempt to find left over keefarce dumps.
 
 
 ## Dev/Contrib Stuff:
