@@ -41,5 +41,37 @@ namespace SharpLeftOvers
             Console.WriteLine("[!]--------------------[!]");
 
         }
+        public static void Keefarce()
+        {
+            Console.WriteLine("[!]---Keefarce---[!]");
+            Console.WriteLine("[*] Looking for left over KeeFarce files");
+            Helper.DirSearchFile(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "keepass_export", ".csv");
+            Console.WriteLine("[!]--------------------[!]");
+
+        }
+
+        public static void Keethief()
+        {
+            Console.WriteLine("[!]---KeeThief---[!]");
+            Console.WriteLine("[*] Looking for left over KeeThief files");
+            Helper.DirSearchFile("C:\\Temp", ".csv");
+            Console.WriteLine("[!]--------------------[!]");
+
+        }
+        public static void MemDumpFiles()
+        {
+            Console.WriteLine("[!]---.dmp Files Stuff---[!]");
+            Console.WriteLine("[*] Looking for POSSIBLE left over lsass dump files.");
+            foreach (DriveInfo d in allDrives)
+            {
+                Helper.DirSearchFile(d.Name, "lsass", ".dmp");
+            }
+            Console.WriteLine("[*] Looking for POSSIBLE left over OTHER memory dump files.");
+            foreach (DriveInfo d in allDrives)
+            {
+                Helper.DirSearchExtension(d.Name,".dmp");
+            }
+            Console.WriteLine("[!]--------------------[!]");
+        }
     }
 }

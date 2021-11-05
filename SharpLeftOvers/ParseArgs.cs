@@ -22,7 +22,7 @@ namespace SharpLeftOvers
             {
                 if (Helper.IsAdministrator==false)
                 {
-                    Console.WriteLine("[!] NOT Running as admin. Somethings wont work as good as they could.");
+                    Console.WriteLine("[!] NOT Running as admin. Somethings wont work as good as they could. Also I cant search everything on the machine.");
                 }
                 for (int x = 0; x < args.Length; ++x)
                 {
@@ -34,6 +34,9 @@ namespace SharpLeftOvers
                                 Commands.Roastedtickets();
                                 Commands.Bloodhound();
                                 Commands.SkeletonKey();
+                                Commands.MemDumpFiles();
+                                Commands.Keefarce();
+                                Commands.Keethief();
                                 break;
                             case "-roastedtickets":
                                 Commands.Roastedtickets();
@@ -43,6 +46,15 @@ namespace SharpLeftOvers
                                 break;
                             case "-skeletonkey":
                                 Commands.SkeletonKey();
+                                break;
+                            case "-dmp":
+                                Commands.MemDumpFiles();
+                                break;
+                            case "-keethief":
+                                Commands.Keethief();
+                                break;
+                            case "-keefarce":
+                                Commands.Keefarce();
                                 break;
                         }
                     }
@@ -86,6 +98,15 @@ Search file systemt for file with name bloodhound and a zip file. (default for t
 
 -skeletonkey
 Attempt to auth to krbtgt account with password 'mimikatz' to check for skeleton key.
+
+-dmp
+Attempt to find lsass dump files or other memory dump files with .dmp extension.
+
+-keethief
+Attempt to find left over keethief dumps.
+
+-keefarce
+Attempt to find left over keefarce dumps.
 ");
 
         }

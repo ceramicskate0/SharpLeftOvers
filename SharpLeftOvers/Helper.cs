@@ -89,7 +89,7 @@ namespace SharpLeftOvers
                         {
                             if (Path.GetFileName(f).ToLower().Contains(FileName.ToLower()) == true)
                             {
-                                Console.WriteLine(" [+] Found: " + f);
+                                Console.WriteLine(" [+] Possible Find: " + f);
                                 filesfound.Add(f);
                             }
                         }
@@ -106,6 +106,12 @@ namespace SharpLeftOvers
                 //Console.WriteLine(excpt.Message);
             }
             return filesfound;
+        }
+
+        public static long FileSize(string path)
+        {
+            FileInfo info = new FileInfo(path);
+            return info.Length;
         }
 
         public static string GetDomain()
