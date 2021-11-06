@@ -24,7 +24,7 @@ SharpLeftOvers is a tool that is geared towards finding default left over artifa
       Search file systemt for file with name bloodhound and a zip file. (default for tool)
 
       -skeletonkey
-      Attempt to auth to krbtgt account with password 'mimikatz' to check for skeleton key.
+      Attempt to auth to krbtgt account with password 'mimikatz' to check for skeleton key. (Credit Red Sieges Youtube talk)
 
       -dmp
       Attempt to find lsass dump files or other memory dump files with .dmp extension.
@@ -34,6 +34,12 @@ SharpLeftOvers is a tool that is geared towards finding default left over artifa
 
       -keefarce
       Attempt to find left over keefarce dumps.
+
+      -notepadplusplus
+      Attempt to locate left over notepad++ temp files. (Credit: mcbazza)
+
+      -rdpthief
+      Attempt to find left over RDP Thief file
 
 
 ## Dev/Contrib Stuff:
