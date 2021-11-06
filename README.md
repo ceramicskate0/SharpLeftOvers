@@ -2,7 +2,7 @@
 (Because anything C# needs to start with a name 'Sharp')
 
 ## HEY! LISTEN!
-This is very alpha. I mean ive only added 3 things to it so far. Of course community and your help/pull/issue requests are very very welcome. Ive tried to keep the coding simple to help anyone pick it up quick. 
+Of course community and your help/pull/issue requests are very very welcome. Ive tried to keep the coding simple to help anyone pick it up quick. 
 
 ## Background
 So heres how this started...there i was doing Red team stuff minding my own business when...BAM! i find bloodhound data and Kerberos tickets sitting on the disk of this box im on...of course im gonna use it...well after i look at it. Turns out (and im sure you have run into this also) previous pentesters had not cleaned up. Finding this kind of stuff makes tests go faster and well no need to redo the wheel. So time to tool it. Since nothing gets fixed until you tool it. Also i got the skeleton key idea from someones talk, i think it was red seige's.
