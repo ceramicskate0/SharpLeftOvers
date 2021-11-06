@@ -14,9 +14,16 @@ namespace SharpLeftOvers
     class Helper
     {
         private static List<string> filesfound = new List<string>();
-        public static bool IsAdministrator =>
-           new WindowsPrincipal(WindowsIdentity.GetCurrent())
-               .IsInRole(WindowsBuiltInRole.Administrator);
+        public static bool IsAdministrator
+        {
+            get
+            {
+                WindowsIdentity wi = WindowsIdentity.GetCurrent();
+                WindowsPrincipal wp = new WindowsPrincipal(wi);
+
+                return wp.IsInRole(WindowsBuiltInRole.Administrator);
+            }
+        }
         public static List<string> DirSearchExtension(string sDir, string extension)
         {
             try
