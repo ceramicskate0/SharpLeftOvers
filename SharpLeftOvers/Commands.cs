@@ -62,6 +62,7 @@ namespace SharpLeftOvers
             Console.WriteLine("[!]--------------------[!]");
 
         }
+
         public static void Keefarce()
         {
             Console.WriteLine("[!]---KeeFarce---[!]");
@@ -70,6 +71,7 @@ namespace SharpLeftOvers
             Console.WriteLine("[!]--------------------[!]");
 
         }
+
         public static void RDPThief()
         {
             Console.WriteLine("[!]---RDP Thief---[!]");
@@ -78,6 +80,7 @@ namespace SharpLeftOvers
             Console.WriteLine("[!]--------------------[!]");
 
         }
+
         public static void NotepadPlusPlus()
         {
             Console.WriteLine("[!]---Notepad++---[!]");
@@ -86,6 +89,7 @@ namespace SharpLeftOvers
             Console.WriteLine("[!]--------------------[!]");
 
         }
+
         public static void Keethief()
         {
             Console.WriteLine("[!]---KeeThief---[!]");
@@ -94,6 +98,7 @@ namespace SharpLeftOvers
             Console.WriteLine("[!]--------------------[!]");
 
         }
+
         public static void MemDumpFiles()
         {
             Console.WriteLine("[!]---.dmp Files Stuff---[!]");

