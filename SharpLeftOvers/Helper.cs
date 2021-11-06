@@ -37,13 +37,13 @@ namespace SharpLeftOvers
                     }
                     catch (System.Exception excpt)
                     {
-                        Console.WriteLine("[!] " + excpt.Message);
+                        //Console.WriteLine("[!] " + excpt.Message);
                     }
                 }
             }
             catch (System.Exception excpt)
             {
-                Console.WriteLine(excpt.Message);
+               //Console.WriteLine(excpt.Message);
             }
             return filesfound;
         }
@@ -67,13 +67,13 @@ namespace SharpLeftOvers
                     }
                     catch (System.Exception excpt)
                     {
-                        Console.WriteLine("[!] " + excpt.Message);
+                        //Console.WriteLine("[!] " + excpt.Message);
                     }
                 }
             }
             catch (System.Exception excpt)
             {
-                Console.WriteLine(excpt.Message);
+                //Console.WriteLine(excpt.Message);
             }
             return filesfound;
         }
@@ -94,6 +94,33 @@ namespace SharpLeftOvers
                             }
                         }
                         DirSearchFile(d, FileName);
+                    }
+                    catch (System.Exception excpt)
+                    {
+                        //Console.WriteLine("[!] " + excpt.Message);
+                    }
+                }
+            }
+            catch (System.Exception excpt)
+            {
+                //Console.WriteLine(excpt.Message);
+            }
+            return filesfound;
+        }
+        public static List<string> DirSearchFile(string sDir)
+        {
+            try
+            {
+                foreach (string d in Directory.GetDirectories(sDir))
+                {
+                    try
+                    {
+                        foreach (string f in Directory.GetFiles(d))
+                        {
+                                Console.WriteLine(" [+] Possible Find: " + f);
+                                filesfound.Add(f);
+                        }
+                        DirSearchFile(d);
                     }
                     catch (System.Exception excpt)
                     {

@@ -22,7 +22,7 @@ namespace SharpLeftOvers
             {
                 if (Helper.IsAdministrator==false)
                 {
-                    Console.WriteLine("[!] NOT Running as admin. Somethings wont work as good as they could. Also I cant search everything on the machine.");
+                    Console.WriteLine("[!] NOT Running as admin. Somethings wont work as good as they could. Also I cant search everything on the machine. Also i will only search user dir for most things (File Permissions).");
                 }
                 for (int x = 0; x < args.Length; ++x)
                 {
@@ -55,6 +55,9 @@ namespace SharpLeftOvers
                                 break;
                             case "-keefarce":
                                 Commands.Keefarce();
+                                break;
+                            case "-notepadplusplus":
+                                Commands.NotepadPlusPlus();
                                 break;
                         }
                     }
@@ -97,7 +100,7 @@ Search file system for any files with .kirbi file extension. (default for tools)
 Search file systemt for file with name bloodhound and a zip file. (default for tool)
 
 -skeletonkey
-Attempt to auth to krbtgt account with password 'mimikatz' to check for skeleton key.
+Attempt to auth to krbtgt account with password 'mimikatz' to check for skeleton key. (Credit Red Sieges Youtube talk)
 
 -dmp
 Attempt to find lsass dump files or other memory dump files with .dmp extension.
@@ -107,6 +110,12 @@ Attempt to find left over keethief dumps.
 
 -keefarce
 Attempt to find left over keefarce dumps.
+
+-notepadplusplus
+Attempt to locate left over notepad++ temp files. (Credit: mcbazza)
+
+-rdpthief
+Attempt to find left over RDP Thief file
 ");
 
         }
