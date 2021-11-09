@@ -94,7 +94,7 @@ namespace SharpLeftOvers
         {
             Console.WriteLine("[!]---KeeThief---[!]");
             Console.WriteLine("[*] Looking for left over KeeThief files");
-            Helper.DirSearchFile(allDrives[0]+"Temp", ".csv");
+            Helper.DirSearchFile(allDrives[0]+"\\Temp", ".csv");
             Console.WriteLine("[!]--------------------[!]");
 
         }
