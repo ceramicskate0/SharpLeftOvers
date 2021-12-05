@@ -22,7 +22,14 @@ namespace SharpLeftOvers
             {
                 if (Helper.IsAdministrator==false)
                 {
-                    Console.WriteLine("[!] NOT Running as admin. Somethings wont work as good as they could. Also I cant search everything on the machine. Also i will only search user dir for most things (File Permissions).");
+                    Console.WriteLine("[!] NOT Running elevated. " +
+                        "Somethings wont work as good as they could. " +
+                        "Also I cant search everything on the machine. " +
+                        "Also i will only search user dir for most things (File Permissions). [!]");
+                }
+                else
+                {
+                    Console.WriteLine("[*] Running elevated");
                 }
                 for (int x = 0; x < args.Length; ++x)
                 {
@@ -69,7 +76,7 @@ namespace SharpLeftOvers
                     catch (Exception e)
                     {
                         Usage();
-                        Console.WriteLine("[Error] Invalid input " + e.Message.ToString());
+                        Console.WriteLine("[Error]: " + e.Message.ToString());
                     }
                 }
             }

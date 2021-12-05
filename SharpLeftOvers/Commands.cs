@@ -19,11 +19,12 @@ namespace SharpLeftOvers
             {
                 if (Helper.IsAdministrator == true)
                 {
-                    Helper.DirSearchExtension(d.Name, ".kirbi");
+                    Helper.DirSearchExtensions(d.Name, ".kirbi|.ccache");
                 }
                 else
                 {
-                    Helper.DirSearchExtension(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".kirbi");
+                    Helper.DirSearchExtensions(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".kirbi|.ccache");
+                    Helper.DirSearchExtensions(@"C:\Windows\Tasks", ".kirbi|.ccache");
                 }
             }
             Console.WriteLine("[!]--------------------[!]");
@@ -42,6 +43,7 @@ namespace SharpLeftOvers
                 else
                 {
                     Helper.DirSearchFile(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "bloodhound", ".zip");
+                    Helper.DirSearchFile(@"C:\Windows\Tasks", "bloodhound", ".zip");
                 }
         }
             Console.WriteLine("[!]--------------------[!]");
@@ -94,39 +96,60 @@ namespace SharpLeftOvers
         {
             Console.WriteLine("[!]---KeeThief---[!]");
             Console.WriteLine("[*] Looking for left over KeeThief files");
-            Helper.DirSearchFile(allDrives[0]+"\\Temp", ".csv");
+            Helper.DirSearchFile(allDrives[0]+"Temp", ".csv");
             Console.WriteLine("[!]--------------------[!]");
 
         }
 
         public static void MemDumpFiles()
         {
-            Console.WriteLine("[!]---.dmp Files Stuff---[!]");
-            Console.WriteLine("[*] Looking for POSSIBLE left over lsass dump files.");
-            foreach (DriveInfo d in allDrives)
+            try
             {
-                if (Helper.IsAdministrator == true)
+                List<string> finds = new List<string>();
+                Console.WriteLine("[!]---.dmp Files Stuff---[!]");
+                Console.WriteLine("\n[*] Looking for POSSIBLE left over lsass dump files.");
+                foreach (DriveInfo d in allDrives)
                 {
-                    Helper.DirSearchFile(d.Name, "lsass", ".dmp");
+                    if (Helper.IsAdministrator == true)
+                    {
+                        finds.AddRange(Helper.DirSearchFile(d.Name, "lsass", ".dmp"));
+                    }
+                    else
+                    {
+                        finds.AddRange(Helper.DirSearchFile(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "lsass", ".dmp"));
+                        finds.AddRange(Helper.DirSearchFile(@"c:\windows\tasks", "lsass", ".dmp"));
+                    }
                 }
-                else
+                finds = finds.Distinct().ToList();
+                foreach (string f in finds)
                 {
-                    Helper.DirSearchFile(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "lsass", ".dmp"); 
+                    Console.WriteLine(" [+] Possible Find: " + f);
                 }
+                finds = new List<string>();
+                Console.WriteLine("\n[*] Looking for POSSIBLE left over OTHER memory dump files.");
+                foreach (DriveInfo d in allDrives)
+                {
+                    if (Helper.IsAdministrator == true)
+                    {
+                        finds.AddRange(Helper.DirSearchExtensions(d.Name, "*.dmp|*.ccache|*.mdmp"));
+                    }
+                    else
+                    {
+                        finds.AddRange(Helper.DirSearchExtensions(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".dmp|.mdmp"));
+                        finds.AddRange(Helper.DirSearchExtensions(@"c:\windows\tasks", ".dmp|.mdmp"));
+                    }
+                }
+                finds = finds.Distinct().ToList();
+                foreach (string f in finds)
+                {
+                    Console.WriteLine(" [+] Possible Find: " + f);
+                }
+                Console.WriteLine("\n[!]--------------------[!]");
             }
-            Console.WriteLine("[*] Looking for POSSIBLE left over OTHER memory dump files.");
-            foreach (DriveInfo d in allDrives)
+            catch (Exception e)
             {
-                if (Helper.IsAdministrator == true)
-                {
-                    Helper.DirSearchExtension(d.Name,".dmp");
-                }
-                else
-                {
-                    Helper.DirSearchExtension(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".dmp");
-                }
-        }
-            Console.WriteLine("[!]--------------------[!]");
+                Console.WriteLine("\n[!] MemDumpFiles() FAILED!!! "+e.Message.ToString());
+            }
         }
     }
 }

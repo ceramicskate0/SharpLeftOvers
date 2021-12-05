@@ -7,11 +7,12 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace SharpLeftOvers
 {
-    class Helper
+    static class Helper
     {
         private static List<string> filesfound = new List<string>();
         public static bool IsAdministrator
@@ -24,6 +25,41 @@ namespace SharpLeftOvers
                 return wp.IsInRole(WindowsBuiltInRole.Administrator);
             }
         }
+
+
+        public static List<string> DirSearchExtensions(string sDir, string extension)
+        {
+            foreach (string d in Directory.GetDirectories(sDir))
+            {
+                try
+                {
+                    foreach (string f in Directory.GetFiles(d))
+                    {
+                        try
+                        {
+                            foreach (string ext in extension.Split('|'))
+                            {
+                                if (Path.GetExtension(f).ToLower().Contains(ext.ToLower())==true)
+                                {
+                                    filesfound.Add(f);
+                                }
+                            }
+                        }
+                        catch (System.Exception excpt)
+                        {
+                            //Console.WriteLine("[!] " + excpt.Message);
+                        }
+                    }
+                    DirSearchExtensions(d, extension);
+                }
+                catch (System.Exception excpt)
+                {
+                    //Console.WriteLine(excpt.Message);
+                }
+            }
+            return filesfound;
+        }
+
         public static List<string> DirSearchExtension(string sDir, string extension)
         {
             try
@@ -56,32 +92,31 @@ namespace SharpLeftOvers
         }
         public static List<string> DirSearchFile(string sDir, string FileName, string extension)
         {
-            try
-            {
                 foreach (string d in Directory.GetDirectories(sDir))
                 {
                     try
                     {
                         foreach (string f in Directory.GetFiles(d))
                         {
-                            if (Path.GetFileName(f).ToLower().Contains(FileName.ToLower()) == true && Path.GetExtension(f).ToLower().Contains(extension.ToLower()) == true)
+                            try
                             {
-                                Console.WriteLine(" [+] Found: " + f);
-                                filesfound.Add(f);
+                                if (Path.GetFileName(f).ToLower().Contains(FileName.ToLower()) == true && Path.GetExtension(f).ToLower().Contains(extension.ToLower()) == true)
+                                {
+                                    filesfound.Add(f);
+                                }
+                            }
+                            catch (System.Exception excpt)
+                            {
+                                //Console.WriteLine("[!] " + excpt.Message);
                             }
                         }
-                        DirSearchFile(d, FileName,extension);
+                        DirSearchFile(d, FileName, extension);
                     }
                     catch (System.Exception excpt)
                     {
                         //Console.WriteLine("[!] " + excpt.Message);
                     }
                 }
-            }
-            catch (System.Exception excpt)
-            {
-                //Console.WriteLine(excpt.Message);
-            }
             return filesfound;
         }
         public static List<string> DirSearchFile(string sDir, string FileName)
@@ -96,7 +131,7 @@ namespace SharpLeftOvers
                         {
                             if (Path.GetFileName(f).ToLower().Contains(FileName.ToLower()) == true)
                             {
-                                Console.WriteLine(" [+] Possible Find: " + f);
+                                //Console.WriteLine(" [+] Possible Find: " + f);
                                 filesfound.Add(f);
                             }
                         }
