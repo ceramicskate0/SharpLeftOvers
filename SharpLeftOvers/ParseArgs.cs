@@ -106,7 +106,7 @@ Note: you can run them by adding them each to commandline or '-all' command.
 Run all searchs/things (list seens below)
 
 -roastedtickets
-Search file system for any files with .kirbi file extension. (default for tools)
+Search file system for any files with .kirbi & .ccache file extensions. (default for tools)
 
 -bloodhound
 Search file systemt for file with name bloodhound and a zip file. (default for tool)
