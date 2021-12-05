@@ -1,7 +1,8 @@
 # SharpLeftOvers
 (Because anything C# needs to start with a name 'Sharp')
 
-Oh its also gonna run slow when you run as admin. More folders to search and all. If you know a way to speed it up let me know (issue/pull/DM)
+## PSA
+Oh its also gonna run slow when you run as elevated. More folders to search and all. If you know a way to speed it up let me know (issue/pull/DM)
 
 ## HEY! LISTEN!
 Of course community and your help/pull/issue requests are very very welcome. Ive tried to keep the coding simple to help anyone pick it up quick. 
