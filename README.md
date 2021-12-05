@@ -8,9 +8,11 @@ Of course community and your help/pull/issue requests are very very welcome. Ive
 So heres how this started...there i was doing Red team stuff minding my own business when...BAM! i find bloodhound data and Kerberos tickets sitting on the disk of this box im on...of course im gonna use it...well after i look at it. Turns out (and im sure you have run into this also) previous pentesters had not cleaned up. Finding this kind of stuff makes tests go faster and well no need to redo the wheel. So time to tool it. Since nothing gets fixed until you tool it. Also i got the skeleton key idea from someones talk, i think it was red seige's.
 
 ## What is this
-SharpLeftOvers is a tool that is geared towards finding default left over artifacts from previous pentests to help yours go faster. It also could be used to help Blue Teams but I am on Red so that is the focus of the tool. Its kind of like Bloodhound that way i guess, multiple uses. Ive tried to keep it able to be run in CobaltStrike(BAD WORD) and other tools who run C# in an appdomain or as a Fork & Run (if this still works for you)(By that i mean no wait for input and no Enviorment.Exit(); !!!!!!!). 
+SharpLeftOvers is a tool that is geared towards finding default left over artifacts from previous pentests to help yours go faster. It also could be used to help Blue Teams but I am on Red so that is the focus of the tool. Its kind of like Bloodhound that way i guess, multiple uses. Ive tried to keep it able to be run in CobaltStrike (BAD WORD) and other tools who run C# in an appdomain or as a Fork & Run (if this still works for you)(By that i mean no wait for input and no Enviorment.Exit(); !!!!!!!). 
 
 ## Usage
+**Example:**``SharpLeftOvers.exe -all``
+
       Commands List:
       Note: you can run them by adding them each to commandline or '-all' command.
 
