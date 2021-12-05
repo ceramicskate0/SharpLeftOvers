@@ -27,7 +27,7 @@ SharpLeftOvers is a tool that is geared towards finding default left over artifa
       Attempt to auth to krbtgt account with password 'mimikatz' to check for skeleton key. (Credit Red Sieges Youtube talk)
 
       -dmp
-      Attempt to find lsass dump files or other memory dump files with .dmp extension.
+      Attempt to find lsass dump files or other memory dump files
 
       -keethief
       Attempt to find left over keethief dumps.
