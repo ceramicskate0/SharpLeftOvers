@@ -52,7 +52,7 @@ namespace SharpLeftOvers
         public static void SkeletonKey()
         {
             Console.WriteLine("[!]---Skeleton Key---[!]");
-            Console.WriteLine("[*] Looking for left over Golden tickets.");
+            Console.WriteLine("[*] Looking for left over Skeleton key.");
             try
             {
                 Console.WriteLine(" [+] 'krbtgt' account password = 'mimikatz'.\n    Status: " + Helper.Authenticate("krbtgt", "mimikatz"));
