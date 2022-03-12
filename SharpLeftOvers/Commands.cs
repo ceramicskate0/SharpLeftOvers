@@ -52,7 +52,7 @@ namespace SharpLeftOvers
         public static void SkeletonKey()
         {
             Console.WriteLine("[!]---Skeleton Key---[!]");
-            Console.WriteLine("[*] Looking for left over Skeleton key.");
+            Console.WriteLine("[*] Looking for left over Golden tickets.");
             try
             {
                 Console.WriteLine(" [+] 'krbtgt' account password = 'mimikatz'.\n    Status: " + Helper.Authenticate("krbtgt", "mimikatz"));
@@ -91,7 +91,20 @@ namespace SharpLeftOvers
             Console.WriteLine("[!]--------------------[!]");
 
         }
+        
+        public static void KeePassPlugin()
+        {
+            Console.WriteLine("[!]---KeePass-Plugin---[!]");
+            Console.WriteLine("[*] Looking for Confirmed POC Malicious KeePassPlugin files");
+            Helper.DirSearchFile(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "KeePassHttp", "plgx");
+            Helper.DirSearchFile(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\KeePass\PluginCache\", "KeePassHttp", "dll");
+            Console.WriteLine("[*] Looking for any KeePassPlugin config files");
+            Helper.DirSearchExtensions(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles), "plgx");
+            Console.WriteLine("[*] Looking for any plugin files");
+            Helper.DirSearchFile(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)+@"\KeePass\PluginCache\", "dll");
+            Console.WriteLine("[!]--------------------[!]");
 
+        }
         public static void Keethief()
         {
             Console.WriteLine("[!]---KeeThief---[!]");

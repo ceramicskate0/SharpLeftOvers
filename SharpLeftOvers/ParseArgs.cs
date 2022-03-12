@@ -71,6 +71,9 @@ namespace SharpLeftOvers
                             case "-rdpthief":
                                 Commands.RDPThief();
                                 break;
+                            case "-keePass-plugin":
+                                Commands.KeePassPlugin();
+                                break;
                         }
                     }
                     catch (Exception e)
@@ -115,7 +118,7 @@ Search file systemt for file with name bloodhound and a zip file. (default for t
 Attempt to auth to krbtgt account with password 'mimikatz' to check for skeleton key. (Credit Red Sieges Youtube talk)
 
 -dmp
-Attempt to find lsass dump files or other memory dump files with .dmp extension.
+Attempt to find lsass dump files or other memory dump files.
 
 -keethief
 Attempt to find left over keethief dumps.
