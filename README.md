@@ -32,7 +32,7 @@ SharpLeftOvers is a tool that is geared towards finding default left over artifa
       Attempt to auth to krbtgt account with password 'mimikatz' to check for skeleton key. (Credit Red Sieges Youtube talk)
 
       -dmp
-      Attempt to find lsass dump files or other memory dump files
+      Attempt to find lsass dump files or other memory dump files.
 
       -keethief
       Attempt to find left over keethief dumps.
@@ -45,6 +45,9 @@ SharpLeftOvers is a tool that is geared towards finding default left over artifa
 
       -rdpthief
       Attempt to find left over RDP Thief file
+
+      -keepass-plugin
+      Attempt to find left over KeePass pLugins (Malicous POC also)
 
 
 ## Dev/Contrib Stuff:
