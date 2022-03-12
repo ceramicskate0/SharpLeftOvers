@@ -71,7 +71,7 @@ namespace SharpLeftOvers
                             case "-rdpthief":
                                 Commands.RDPThief();
                                 break;
-                            case "-keePass-plugin":
+                            case "-keepass-plugin":
                                 Commands.KeePassPlugin();
                                 break;
                         }
@@ -131,6 +131,9 @@ Attempt to locate left over notepad++ temp files. (Credit: mcbazza)
 
 -rdpthief
 Attempt to find left over RDP Thief file
+
+-keepass-plugin
+Attempt to find left over KeePass pLugins (Malicous POC also)
 ");
 
         }
