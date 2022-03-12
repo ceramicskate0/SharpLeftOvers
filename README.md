@@ -1,6 +1,10 @@
 # SharpLeftOvers
 (Because anything C# needs to start with a name 'Sharp')
 
+## Super Low Detection Rating
+![SharpLeftOvers](https://user-images.githubusercontent.com/6934294/158038932-43d1ef7a-63b9-440c-963c-26545c9565e5.PNG)
+
+
 ## PSA
 Oh its also gonna run slow when you run as elevated. More folders to search and all. If you know a way to speed it up let me know (issue/pull/DM)
 
