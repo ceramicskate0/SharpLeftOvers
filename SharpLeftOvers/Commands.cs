@@ -113,7 +113,10 @@ namespace SharpLeftOvers
             Console.WriteLine("[!]--------------------[!]");
 
         }
-
+        public static bool dragoncastle()
+        {
+            return File.Exists(@"C:\pwned.txt");
+        }
         public static void MemDumpFiles()
         {
             try
