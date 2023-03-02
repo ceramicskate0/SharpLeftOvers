@@ -54,6 +54,15 @@ SharpLeftOvers is a tool that is geared towards finding default left over artifa
       -keepass-plugin
       Attempt to find left over KeePass pLugins (Malicous POC also)
 
+      -dragoncastle
+      Find dragoncastle left over files
+
+      -nppspy
+      Find nppspy leftovers files
+
+      -dumpert
+      Find dumpert leftovers files
+
 
 ## Dev/Contrib Stuff:
 - **Commands.cs** = The searchs to look for things. If you want to add new ones put the code here. Try to keep it to a simple method to run.
