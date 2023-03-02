@@ -79,6 +79,7 @@ namespace SharpLeftOvers
             Console.WriteLine("[!]---RDP Thief---[!]");
             Console.WriteLine("[*] Looking for left over RDP Thief files");
             Helper.DirSearchFile(System.IO.Path.GetTempPath(), "data", ".bin");
+            Helper.DirSearchFile(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "RdpThief_x64.tmp");
             Console.WriteLine("[!]--------------------[!]");
 
         }
@@ -91,7 +92,30 @@ namespace SharpLeftOvers
             Console.WriteLine("[!]--------------------[!]");
 
         }
-        
+
+        public static void dragoncastle()
+        {
+            Console.WriteLine("[!]---DragonCaslte---[!]");
+            Console.WriteLine("[*] Looking for left over DragonCastle files");
+            Console.WriteLine("Result of search for 'C:\\pwned.txt': "+File.Exists(@"C:\pwned.txt"));
+            Console.WriteLine("[!]--------------------[!]");
+        }
+        public static void dumpert()
+        {
+            Console.WriteLine("[!]---DumpERT---[!]");
+            Console.WriteLine("[*] Looking for left over DumpERT files");
+            Console.WriteLine("Result of search for 'C:\\windows\\temp\\dumpert.dmp': " + File.Exists(@"C:\windows\temp\dumpert.dmp"));
+            Console.WriteLine("[!]--------------------[!]");
+        }
+
+        public static void nppspy()
+        {
+            Console.WriteLine("[!]---NPPSpy---[!]");
+            Console.WriteLine("[*] Looking for left over NPPSpy files");
+            Console.WriteLine("Result of search for 'C:\\NPPSpy.txt': " + File.Exists(@"C:\NPPSpy.txt"));
+            Console.WriteLine("[!]--------------------[!]");
+        }
+
         public static void KeePassPlugin()
         {
             Console.WriteLine("[!]---KeePass-Plugin---[!]");
@@ -112,10 +136,6 @@ namespace SharpLeftOvers
             Helper.DirSearchFile(allDrives[0]+"Temp", ".csv");
             Console.WriteLine("[!]--------------------[!]");
 
-        }
-        public static bool dragoncastle()
-        {
-            return File.Exists(@"C:\pwned.txt");
         }
         public static void MemDumpFiles()
         {

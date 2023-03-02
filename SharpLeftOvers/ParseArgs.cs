@@ -75,6 +75,15 @@ namespace SharpLeftOvers
                             case "-keepass-plugin":
                                 Commands.KeePassPlugin();
                                 break;
+                            case "-dragoncastle":
+                                Commands.dragoncastle();
+                                break;
+                            case "-nppspy":
+                                Commands.nppspy();
+                                break;
+                            case "-dumpert":
+                                Commands.dumpert();
+                                break;
                         }
                     }
                     catch (Exception e)
@@ -135,6 +144,15 @@ Attempt to find left over RDP Thief file
 
 -keepass-plugin
 Attempt to find left over KeePass pLugins (Malicous POC also)
+
+-dragoncastle
+Find dragoncastle left over files
+
+-nppspy
+Find nppspy leftovers files
+
+-dumpert
+Find dumpert leftovers files
 ");
 
         }
