@@ -7,6 +7,7 @@
 ![SharpLeftOvers](https://user-images.githubusercontent.com/6934294/158038932-43d1ef7a-63b9-440c-963c-26545c9565e5.PNG)
 [VT Link](https://www.virustotal.com/gui/file/966cebb69e58697b3e0c855f232c10098d6f00093fbc88ea98d0071303dc0e1c/detection)
 - **UPDATE** as of 2/3/23 still bypassing defender :-)
+- **UPDATE** as of 9/13/23 still bypassing defender and its down to 3 A/V detections from the 4 in the image :-)
 
 ## PSA
 Oh its also gonna run slow when you run as elevated. More folders to search and all. If you know a way to speed it up let me know (issue/pull/DM)
