@@ -1,7 +1,7 @@
 # SharpLeftOvers
 (Because anything C# needs to start with a name 'Sharp')
 
-## ![The Blog Post](https://ceramicskate0.github.io/SharpLeftovers.html)
+## [The Blog Post](https://ceramicskate0.github.io/SharpLeftovers.html)
 
 ## Super Low Detection Rating
 ![SharpLeftOvers](https://user-images.githubusercontent.com/6934294/158038932-43d1ef7a-63b9-440c-963c-26545c9565e5.PNG)
